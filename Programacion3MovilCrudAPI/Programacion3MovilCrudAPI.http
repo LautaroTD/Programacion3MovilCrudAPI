@@ -1,0 +1,6 @@
+@Programacion3MovilCrudAPI_HostAddress = http://localhost:5063
+
+GET {{Programacion3MovilCrudAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,91 @@
+## Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build Results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## NuGet Packages
+*.nupkg
+# Exclude package directories
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Rider
+.idea/
+*.sln.iml
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Azure Pipelines
+.azure-pipelines/
+
+## Code Coverage
+*.coverage
+*.coveragexml
+TestResults/
+
+## User-specific files
+*.vspscc
+*.vssscc
+*.dbmdl
+*.pfx
+*.publishsettings
+*.orig
+
+## Others
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*.cache
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# MSTest test results
+*.trx
+
+# DotCover
+*.dotCover
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# JetBrains Rider
+.idea/
+
+# Logs
+*.log
