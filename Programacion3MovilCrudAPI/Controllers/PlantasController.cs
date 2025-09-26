@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Programacion3MovilCrudAPI.Controllers
 {
@@ -46,6 +47,7 @@ namespace Programacion3MovilCrudAPI.Controllers
 
 
         [HttpPost]
+        [Authorize]
         [Route("guardar")]
         public async Task<ActionResult> PostPlantas([FromBody] Plantas plantas)
         {
@@ -59,6 +61,7 @@ namespace Programacion3MovilCrudAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         [Route("editar/{id}")]
         public async Task<ActionResult<Plantas>> EditPlantas(int id,[FromBody] Plantas plantas)
         {
@@ -81,6 +84,7 @@ namespace Programacion3MovilCrudAPI.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         [Route("eliminar/{id}")]
         public async Task<ActionResult> DeletePlantas(int id)
         {

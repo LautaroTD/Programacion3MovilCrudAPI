@@ -31,6 +31,8 @@ public partial class plantasDBContext : DbContext
 
     public virtual DbSet<Suelos> Suelos { get; set; }
 
+    public DbSet<Usuario> Usuarios { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<AspNetRoleClaims>(entity =>
@@ -50,6 +52,18 @@ public partial class plantasDBContext : DbContext
 
             entity.Property(e => e.Name).HasMaxLength(256);
             entity.Property(e => e.NormalizedName).HasMaxLength(256);
+        });
+
+        modelBuilder.Entity<Usuario>(entity =>
+        {
+            entity.ToTable("Usuario");
+
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Name).IsRequired().HasMaxLength(250);
+            entity.Property(e => e.Password).IsRequired().HasMaxLength(250);
+            entity.Property(e => e.Role).IsRequired().HasMaxLength(50);
+            entity.Property(e => e.Imagen).HasMaxLength(250);
         });
 
         modelBuilder.Entity<AspNetUserClaims>(entity =>
