@@ -35,10 +35,13 @@ namespace Programacion3MovilCrudAPI.Controllers
 
         [HttpGet]
         [Route("buscar/{id}")]
-        public async Task<ActionResult<IEnumerable<Plantas>>> GetPlantas(int id)
+        public async Task<ActionResult<Plantas>> GetPlanta(int id)
         {
-            var plantas = await _context.Plantas.Where(e=>e.Id == id).ToListAsync();
-            return Ok(plantas);
+            var planta = await _context.Plantas.FindAsync(id);
+            if (planta == null)
+                return NotFound();
+
+            return Ok(planta);
         }
 
 
@@ -56,7 +59,7 @@ namespace Programacion3MovilCrudAPI.Controllers
         }
 
         [HttpPut]
-        [Route("editar")]
+        [Route("editar/{id}")]
         public async Task<ActionResult<Plantas>> EditPlantas(int id,[FromBody] Plantas plantas)
         {
             var plantasInContext = await _context.Plantas.Where(e => e.Id == id).FirstAsync();
@@ -78,7 +81,7 @@ namespace Programacion3MovilCrudAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("eliminar")]
+        [Route("eliminar/{id}")]
         public async Task<ActionResult> DeletePlantas(int id)
         {
             var plantas = await _context.Plantas.Where(e => e.Id == id).FirstAsync();

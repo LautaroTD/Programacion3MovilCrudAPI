@@ -166,6 +166,10 @@ public partial class plantasDBContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("nombre_vulgar");
+            entity.Property(e => e.Imagen)
+                  .HasMaxLength(500)
+                  .IsUnicode(false)
+                  .HasColumnName("imagen");
         });
 
         modelBuilder.Entity<Suelos>(entity =>
